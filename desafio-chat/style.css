@@ -1,0 +1,97 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1E1E1E;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  max-height: 42.625rem;
+}
+
+.container {
+  background: #1a1924;
+  width: clamp(23.4375rem, 5vw, 64rem);
+  margin: 7.5rem auto 0;
+  padding: 1.5rem 2rem;
+  border-radius: .5rem;
+}
+
+/* HEADER */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.user-info .name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.user-info .status {
+  color: #00b37e;
+}
+
+.date {
+  text-align: center;
+  margin-top: 1.625rem;
+}
+
+/* MESSAGE AREA */
+.message-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.875rem;
+}
+
+.message-info p {
+  padding: 0.875rem;
+  max-width: 9.375rem;
+}
+
+.message-info.received p {
+  background: #633bbc;
+  border-radius: 0 8px 8px 8px;
+  align-self: flex-start;
+}
+
+.message-info.sent p {
+  background: #07847e;
+  border-radius: 8px 8px 0 8px;
+}
+
+.message-info.sent p,
+.message-info.sent span {
+  align-self: flex-end;
+}
+
+/* TYPING AREA */
+.typing-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.375rem;
+
+  background: #282843;
+  color: #e1e1e6;
+  padding: 1.1875rem 1.5rem;
+  border-radius: 62.4375rem;
+}
