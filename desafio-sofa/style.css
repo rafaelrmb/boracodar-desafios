@@ -1,0 +1,149 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --bg-primary-color: 257 72% 89%;
+  --btn-hover-color: 0 0% 100%;
+
+  --text-primary-color: 258 45% 19%;
+
+  /* Fonts */
+  --ff-title: "Crimson Pro", serif;
+  --ff-text: "Lato", sans-serif;
+
+  /* Font-size */
+  --fs-900: 2rem;
+  --fs-300: 1rem;
+  --fs-200: 0.75rem;
+  --fs-100: 0.625rem;
+}
+
+body {
+  background-color: hsla(var(--bg-primary-color));
+  font-family: var(--ff-text);
+  color: hsla(var(--text-primary-color));
+
+  position: relative;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  gap: 4rem;
+
+  max-width: 80%;
+  min-height: 100vh; /* fallback value */
+  min-height: 100dvh;
+}
+
+.product-banner {
+  position: relative;
+}
+
+.product-image {
+  display: block;
+  width: 100%;
+}
+
+.toggle-image-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 3.125rem;
+}
+
+.toggle-image-btn.close {
+  position: absolute;
+  top: 0.7rem;
+  right: 3.75rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-id,
+.add-to-basket {
+  text-transform: uppercase;
+  display: block;
+}
+
+.product-id {
+  font-size: var(--fs-100);
+  font-weight: 300;
+}
+
+.product-price {
+  font-size: var(--fs-300);
+}
+
+.product-name {
+  font-family: var(--ff-title);
+}
+
+.add-to-basket {
+  border: 1px solid hsla(var(--text-primary-color));
+  border-radius: 9999px;
+  font-size: var(--fs-200);
+  padding: 0.5rem 1rem;
+  max-width: 10rem;
+  margin-top: 0.5rem;
+
+  transition: 0.3s ease-in-out;
+}
+
+.add-to-basket:hover {
+  background-color: hsla(var(--text-primary-color) / 90%);
+  color: hsla(var(--btn-hover-color));
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.item-in-basket {
+  display: none;
+}
+
+.item-in-basket.success {
+  display: block;
+  background-color: hsla(var(--text-primary-color));
+  color: hsla(var(--btn-hover-color));
+  text-align: center;
+  padding: 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  animation: upDown 10s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-100px);
+  }
+}
